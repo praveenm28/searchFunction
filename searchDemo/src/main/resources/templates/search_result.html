@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${pageTitle}]]</title>
+</head>
+<body>
+<center>
+  <h1>Search result for [[${search}]]</h1>
+  <div align="right">
+  <form th:action = "@{/search}" method="get">
+    <input type="search" size="10" placeholder="Search here" name = "search" required>
+    <input type = "submit" value = "Search">
+  </form>
+  </div>
+  <br>
+  <table cellpadding="2px" border="5" >
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th >Description</th>
+      <th>price</th>
+      <th>quantity</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each = "item: ${listItems}">
+      <td th:text = "${item.name}" >Item Name</td>
+      <td th:text = "${item.description}">description</td>
+      <td th:text = "${item.price}">Price</td>
+      <td th:text = "${item.qty}">Quantity</td>
+    </tr>
+    </tbody>
+  </table>
+</center>
+
+</body>
+</html>
