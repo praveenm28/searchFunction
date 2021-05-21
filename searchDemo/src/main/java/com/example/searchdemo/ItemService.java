@@ -12,6 +12,6 @@ public class ItemService {
     private ItemRepository repo;
 
     public List<Item> searchByName(String name){
-        return repo.findByNameLike( "%"+name+"%" );
+        return repo.findBy("%"+name+"%");
     }
 }
